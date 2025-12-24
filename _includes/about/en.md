@@ -13,4 +13,10 @@ Now I worked in the super-alignment lab which was tutored by Xiangyong Cao .
 - Painfully nowhere
 
 ##### Papers
+
 - Also nowhere
+
+##### Patents
+
+- STAGE ROBOTS(FIRST AUTHOR)
+
