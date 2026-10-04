@@ -3,7 +3,14 @@
     {
       "id_name": "cf-links",
       "desc": "友情链接",
-      "link_list": []
+      "link_list": [
+        {
+          "name": "新的原野",
+          "intro": "Sinya Lee 的博客——从衣冠南渡聊到下南洋",
+          "link": "https://sinyalee.com",
+          "avatar": "https://sinyalee.com/favicon.ico"
+        }
+      ]
     },
     {
       "id_name": "inactive-links",
