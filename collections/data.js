@@ -55,5 +55,17 @@ window.COLLECTIONS_DATA = {
     { title: "(示例)某个键盘/耳机/显卡", meta: "示例条目,可删", img: "", thoughts: "设备、参数、踩坑、真香点,都写在这。" },
   ],
 
+  videos: [
+    { title: "(示例)一个视频", meta: "UP主/频道 · 示例条目,可删", free: [{ label: "免费观看", url: "https://www.bilibili.com/" }], thoughts: "把这段换成你对这个视频的安利或锐评;free 里放能直接看的链接。" },
+  ],
+
+  courses: [
+    { title: "(示例)CS144 计算机网络", meta: "Stanford · 示例条目,可删", link: "https://cs144.github.io/", thoughts: "听课感受、作业强度、推荐指数——写在这。你做过 CS144 的 minnow lab,正好补一篇。" },
+  ],
+
+  resources: [
+    { title: "(示例)一个资源", meta: "工具/软件/资料 · 示例条目,可删", link: "", thoughts: "好用的工具、软件、学习资料——链接放 link 里,想法写这。只分享有合法授权的资源。" },
+  ],
+
   photos: [],
 };
