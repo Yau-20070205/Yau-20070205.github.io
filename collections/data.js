@@ -67,5 +67,8 @@ window.COLLECTIONS_DATA = {
     { title: "(示例)一个资源", meta: "工具/软件/资料 · 示例条目,可删", link: "", thoughts: "好用的工具、软件、学习资料——链接放 link 里,想法写这。只分享有合法授权的资源。" },
   ],
 
+  // 主播区(18+)—— 名单与评价由站主自行填写;注意把握尺度(GitHub Pages 政策)
+  streamers: [],
+
   photos: [],
 };
