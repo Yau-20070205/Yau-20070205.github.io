@@ -55,3 +55,17 @@ html:not(.dark) div#content::before{
 html:not(.dark) ::selection{
   background: hsl(44 30% 82%);
 }
+
+/* ============================================
+   水墨远山 + 纸纹颗粒(固定于视口,极淡)
+   ============================================ */
+html:not(.dark) body{
+  background-color:hsl(var(--background));
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 380' preserveAspectRatio='xMidYMax slice'%3E%3Cpath d='M0 380V300Q120 225 270 278T560 262Q710 205 860 272T1150 245Q1300 200 1440 275V380Z' fill='%232a2a26' opacity='.07'/%3E%3Cpath d='M0 380V336Q170 285 350 328T720 318Q930 272 1130 328T1440 318V380Z' fill='%232a2a26' opacity='.05'/%3E%3C/svg%3E");
+  background-repeat:repeat,no-repeat;
+  background-position:0 0,bottom center;
+  background-size:240px 240px,100% 340px;
+  background-attachment:scroll,fixed;
+}
