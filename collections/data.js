@@ -1,13 +1,14 @@
 // ===============================================
 // 收藏页数据文件 —— 想加条目就照着格式抄一段。
 // 每个条目: title=名字, img=封面图(可选,放 /images/ 下), link=外链(可选),
-//           meta=一行小字(作者/年份/评分等,可选), thoughts=点开详情里你的想法(必填最有趣!)
+//           meta=一行小字(作者/年份等,可选), thoughts=点开详情里你的想法(必填最有趣!)
+//           rating=评分 0~5(可小数,卡片显示星星,可选), tags=["标签"] (可选)
 // music 条目额外支持: free=[{label:"网易云",url:"..."}] 免费收听链接
 // ===============================================
 window.COLLECTIONS_DATA = {
 
   books: [
-    { title: "(示例)《三体》", meta: "刘慈欣 · 示例条目,可删", thoughts: "这里是写你对这本书的想法的地方。把这段文字换成你的读后感,或者直接删掉这个条目。加新书就照这个格式再抄一段。" },
+    { title: "(示例)《三体》", meta: "刘慈欣 · 示例条目,可删", rating: 5, tags: ["科幻", "小说"], thoughts: "这里是写你对这本书的想法的地方。把这段文字换成你的读后感,或者直接删掉这个条目。加新书就照这个格式再抄一段。" },
   ],
 
   games: [
@@ -27,7 +28,7 @@ window.COLLECTIONS_DATA = {
   ],
 
   movies: [
-    { title: "(示例)《星际穿越》", meta: "Nolan · 2014 · 示例条目,可删", thoughts: "把这段换成你对这部电影的想法。" },
+    { title: "(示例)《星际穿越》", meta: "Nolan · 2014 · 示例条目,可删", rating: 4.5, tags: ["科幻", "太空"], thoughts: "把这段换成你对这部电影的想法。" },
   ],
 
   music: [
@@ -40,7 +41,7 @@ window.COLLECTIONS_DATA = {
   ],
 
   drinks: [
-    { title: "(示例)冰美式", meta: "示例条目,可删", thoughts: "把这段换成你对这款饮料的锐评。" },
+    { title: "(示例)冰美式", meta: "示例条目,可删", rating: 4, thoughts: "把这段换成你对这款饮料的锐评。" },
   ],
 
   people: [
@@ -60,7 +61,7 @@ window.COLLECTIONS_DATA = {
   ],
 
   courses: [
-    { title: "(示例)CS144 计算机网络", meta: "Stanford · 示例条目,可删", link: "https://cs144.github.io/", thoughts: "听课感受、作业强度、推荐指数——写在这。你做过 CS144 的 minnow lab,正好补一篇。" },
+    { title: "(示例)CS144 计算机网络", meta: "Stanford · 示例条目,可删", link: "https://cs144.github.io/", rating: 5, tags: ["课程", "网络"], thoughts: "听课感受、作业强度、推荐指数——写在这。你做过 CS144 的 minnow lab,正好补一篇。" },
   ],
 
   resources: [
