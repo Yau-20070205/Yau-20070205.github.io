@@ -32,7 +32,13 @@ window.COLLECTIONS_DATA = {
   ],
 
   music: [
-    { title: "(示例)《夜空中最亮的星》", meta: "逃跑计划 · 示例条目,可删", free: [{ label: "免费收听", url: "https://music.163.com/" }], thoughts: "音乐区你说自己添加:照这个格式加歌,free 里放免费听的链接(网易云/YouTube 都行)。" },
+    { title: "逃跑计划", meta: "《夜空中最亮的星》《一万次悲伤》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=逃跑计划" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=逃跑计划" }], thoughts: "中文摇滚里最会写大合唱的乐队,前奏一响全场手机灯就亮。" },
+    { title: "邓紫棋 G.E.M.", meta: "《光年之外》《泡沫》《句号》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=邓紫棋" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=邓紫棋" }], thoughts: "铁肺唱功,流行度与实力兼备。" },
+    { title: "李健", meta: "《贝加尔湖畔》《传奇》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=李健" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=李健" }], thoughts: "音乐诗人,干净克制,像贝加尔湖的风。" },
+    { title: "张雨生", meta: "《大海》《我的未来不是梦》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=张雨生" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=张雨生" }], thoughts: "高音穿越时代的才子,经典至今不过时。" },
+    { title: "罗大佑", meta: "《童年》《光阴的故事》《恋曲1990》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=罗大佑" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=罗大佑" }], thoughts: "华语流行乐的教父,写尽了时代与童年。" },
+    { title: "朴树", meta: "《平凡之路》《那些花儿》《生如夏花》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=朴树" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=朴树" }], thoughts: "少年感与沧桑感的矛盾体,十年磨一首歌也值。" },
+    { title: "吴青峰", meta: "苏打绿主唱 · 《小情歌》《无与伦比的美丽》", free: [{ label: "网易云", url: "https://music.163.com/#/search/m/?s=吴青峰" }, { label: "B站", url: "https://search.bilibili.com/all?keyword=吴青峰" }], thoughts: "嗓音辨识度拉满的词曲才子。" },
   ],
 
   tech: [
