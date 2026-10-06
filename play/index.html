@@ -18,7 +18,7 @@
 <style>:where([data-astro-image]){height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}[data-astro-image-fit=fill]{object-fit:fill}[data-astro-image-fit=contain]{object-fit:contain}[data-astro-image-fit=cover]{object-fit:cover}[data-astro-image-fit=scale-down]{object-fit:scale-down}
 </style><script type="module" src="/_astro/page.CcE5jMMM.js"></script><style>.project-card-fg:where(.astro-4z6dfqi7){--un-gradient-shape: to bottom in oklch;--un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);--un-gradient-from-position: 0%;--un-gradient-from: transparent var(--un-gradient-from-position);--un-gradient-to-position: 80%;--un-gradient-to: hsl(var(--card) / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to);background-image:linear-gradient(var(--un-gradient))}.project-card:where(.astro-4z6dfqi7):hover .project-card-fg:where(.astro-4z6dfqi7){--un-gradient-to-position: 100%}
 :where([data-astro-image]){height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}[data-astro-image-fit=fill]{object-fit:fill}[data-astro-image-fit=contain]{object-fit:contain}[data-astro-image-fit=cover]{object-fit:cover}[data-astro-image-fit=scale-down]{object-fit:scale-down}
-</style><link rel="stylesheet" href="/zen.css?v=3"><style>
+</style><link rel="stylesheet" href="/zen.css?v=4"><style>
 .coll-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.9rem;margin:.6rem 0 1.6rem}
 .coll-card{position:relative;display:flex;flex-direction:column;align-items:stretch;text-align:left;border:1px solid hsl(var(--border));border-radius:1rem;overflow:hidden;background:hsl(var(--muted));cursor:pointer;transition:transform .15s ease,border-color .15s ease;padding:0;font:inherit}
 .coll-card:hover{transform:translateY(-3px);border-color:hsl(var(--foreground)/.25)}
@@ -146,54 +146,25 @@ theme powered
   var D = window.COLLECTIONS_DATA || {};
   function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
   function stars(n){if(n==null||n==="")return "";n=Math.max(0,Math.min(5,Number(n)||0));var f=Math.floor(n),h=n-f>=.5,s="";for(var i=0;i<5;i++){s+=i<f?"★":(i===f&&h?"⯨":"☆")}return s}
-  function card(it, sec){
-    var b = document.createElement("button");
-    b.className = "coll-card"; b.type = "button";
+  function card(it, type, i){
+    var a = document.createElement("a");
+    a.className = "coll-card";
+    a.href = "/play/item.html?type=" + type + "&i=" + i;
     var inner = "";
     if(it.img){ inner += '<img loading="lazy" decoding="async" src="' + esc(it.img) + '" alt="' + esc(it.title) + '">'; }
     else { inner += '<span class="coll-ph">' + esc((it.title||"?").charAt(0)) + '</span>'; }
-    inner += '<span class="coll-body"><strong>' + esc(it.title) + '</strong>';
+    inner += '<span class="coll-veil"></span>';
+    inner += '<span class="coll-reveal"><strong>' + esc(it.title) + '</strong>';
     if(it.rating!=null && it.rating!==""){ inner += '<small class="coll-stars">' + stars(it.rating) + '</small>'; }
-    if(it.meta){ inner += '<small>' + esc(it.meta) + '</small>'; }
+    if(it.meta){ inner += '<small class="coll-meta">' + esc(it.meta) + '</small>'; }
+    if(it.songs && it.songs.length){ inner += '<small class="coll-meta">' + it.songs.length + ' 首代表曲目</small>'; }
+    inner += '<small class="coll-more">查看详情 →</small>';
     inner += '</span>';
-    b.innerHTML = inner;
-    b.addEventListener("click", function(){ openModal(it, sec); });
-    return b;
+    a.innerHTML = inner;
+    return a;
   }
-  (D.games||[]).forEach(function(it){ document.getElementById("games-grid").appendChild(card(it,"games")); });
-  (D.music||[]).forEach(function(it){ document.getElementById("music-grid").appendChild(card(it,"music")); });
-
-  var modal = document.createElement("div");
-  modal.className = "coll-modal";
-  document.body.appendChild(modal);
-  modal.addEventListener("click", function(e){ if(e.target === modal) modal.classList.remove("open"); });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") modal.classList.remove("open"); });
-  function closeModal(){ modal.classList.remove("open"); }
-  function openModal(it, sec){
-    var h = '<div class="coll-sheet"><button class="coll-close" aria-label="关闭">✕</button>';
-    if(it.img){ h += '<img class="hero" src="' + esc(it.img) + '" alt="' + esc(it.title) + '">'; }
-    h += '<h3>' + esc(it.title) + '</h3>';
-    if(it.meta){ h += '<div class="meta">' + esc(it.meta) + '</div>'; }
-    if(it.rating!=null && it.rating!==""){ h += '<div class="coll-stars" style="font-size:1.1rem;margin-bottom:.5rem">' + stars(it.rating) + '</div>'; }
-    if(it.tags && it.tags.length){ h += '<div style="margin:0 0 .6rem">' + it.tags.map(function(x){ return '<span class="coll-tag">' + esc(x) + '</span>'; }).join("") + '</div>'; }
-    var def = sec === "music" ? "这篇乐评还没写——等 Yau 补上。" : "这篇评测还没写——等 Yau 补上。";
-    h += '<div class="thoughts">' + esc(it.thoughts && it.thoughts.trim() ? it.thoughts : def) + '</div>';
-    if(it.video){
-      if(it.video.indexOf("bilibili.com/video/") > -1){
-        var bv = it.video.split("/video/")[1].split(/[?#/]/)[0];
-        h += '<div style="margin-top:.9rem;aspect-ratio:16/9;"><iframe src="https://player.bilibili.com/player.html?bvid=' + esc(bv) + '&autoplay=0" scrolling="no" frameborder="0" allowfullscreen="true" style="width:100%;height:100%;border:0;border-radius:.8rem"></iframe></div>';
-      } else {
-        h += '<div style="margin-top:.9rem"><a class="coll-free" target="_blank" rel="noopener" href="' + esc(it.video) + '">🎬 看视频</a></div>';
-      }
-    }
-    if(it.free && it.free.length){
-      h += '<div style="margin-top:.9rem">' + it.free.map(function(f){ return '<a class="coll-free" target="_blank" rel="noopener" href="' + esc(f.url) + '">▶ ' + esc(f.label || "免费收听") + '</a>'; }).join("") + '</div>';
-    }
-    if(it.link){ h += '<div style="margin-top:.9rem"><a class="coll-free" target="_blank" rel="noopener" href="' + esc(it.link) + '">🔗 相关链接</a></div>'; }
-    h += '</div>';
-    modal.innerHTML = h;
-    modal.querySelector(".coll-close").addEventListener("click", closeModal);
-    modal.classList.add("open");
-  }
+  (D.games||[]).forEach(function(it,i){ document.getElementById("games-grid").appendChild(card(it,"games",i)); });
+  (D.music||[]).forEach(function(it,i){ document.getElementById("music-grid").appendChild(card(it,"music",i)); });
+  var p = document.querySelector('p.astro-scuu7fyy');
 })();
 </script></body> </html> <script type="module">const d=document.getElementById("sidebar-btn"),e=document.getElementById("sidebar"),s=document.getElementById("sidebar-shade");s&&s.addEventListener("click",()=>{t()});function t(){e&&e.classList.contains("show")?(e.classList.remove("show"),s.style.display="none"):e&&(e.classList.add("show"),s.style.display="block")}d?.addEventListener("click",()=>{t()});</script>
