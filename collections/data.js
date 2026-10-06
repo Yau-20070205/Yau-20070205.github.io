@@ -3,6 +3,7 @@
 // 每个条目: title=名字, img=封面图(可选,放 /images/ 下), link=外链(可选),
 //           meta=一行小字(作者/年份等,可选), thoughts=点开详情里你的想法(必填最有趣!)
 //           rating=评分 0~5(可小数,卡片显示星星,可选), tags=["标签"] (可选)
+//           video=B站视频链接(https://www.bilibili.com/video/BVxxxx)——详情弹窗内直接内嵌播放;其他视频网站则显示为跳转按钮
 // music 条目额外支持: free=[{label:"网易云",url:"..."}] 免费收听链接
 // ===============================================
 window.COLLECTIONS_DATA = {
