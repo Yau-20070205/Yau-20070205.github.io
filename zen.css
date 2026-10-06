@@ -50,7 +50,7 @@ html:not(.dark) body{
 }
 
 /* 详情页(收纳卡点入) */
-.item-hero{width:100%;max-height:430px;object-fit:cover;border-radius:1.25rem;margin:0 0 1.3rem;border:1px solid hsl(var(--border))}
+.item-hero{width:100%;height:auto;max-height:640px;object-fit:contain;object-position:top center;border-radius:1.25rem;margin:0 auto 1.3rem;border:1px solid hsl(var(--border));display:block;background:hsl(var(--muted)/.4)}
 .item-title{font-size:2.1rem;font-weight:600;margin:0 0 .35rem;line-height:1.25}
 .item-meta{color:hsl(var(--muted-foreground));margin-bottom:.8rem}
 .item-sub{font-weight:600;margin:1.4rem 0 .5rem;font-size:1.05rem}
@@ -63,6 +63,7 @@ html:not(.dark) body{
 html:not(.dark) .coll-veil{background:linear-gradient(180deg,transparent 45%,hsl(var(--background)/.30) 72%,rgba(0,0,0,.26))}
 .coll-reveal{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;gap:.12rem;padding:1.7rem .95rem .7rem;background:linear-gradient(180deg,transparent,hsl(var(--card)/.97) 46%);transform:translateY(calc(100% - 3.15rem));transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .coll-card:hover .coll-reveal,.coll-card:focus-visible .coll-reveal{transform:translateY(0)}
+.coll-card img{object-position:center 22%}
 .coll-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 14px 34px -14px rgba(0,0,0,.28);z-index:3}
 .coll-reveal strong{font-size:1rem;color:hsl(var(--foreground));line-height:1.3}
 .coll-reveal small{color:hsl(var(--muted-foreground));font-size:.78rem}
